@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Abarrotes Ketzal</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="main-header">
+    <div class="logo-nombre">
+      <img src="logo-ketzal.png" alt="Logo Abarrotes Ketzal" class="logo">
+      <span class="nombre-tienda">Abarrotes Ketzal</span>
+    </div>
+    <button id="carrito-btn" class="carrito-btn">
+      🛒 <span id="carrito-contador">0</span>
+    </button>
+  </header>
+
+  <!-- Barra superior: búsqueda a la izquierda, menú a la derecha -->
+  <div class="superior-bar">
+    <div class="busqueda-bar">
+      <input type="text" id="busqueda-input" placeholder="Buscar productos...">
+      <button id="busqueda-btn">Buscar</button>
+    </div>
+    <nav class="tabs">
+      <button data-tab="inicio" class="active">Inicio</button>
+      <button data-tab="nosotros">Nosotros</button>
+      <button data-tab="promociones">Promociones</button>
+      <button data-tab="contacto">Contacto</button>
+      <button data-tab="productos">Productos</button>
+      <button data-tab="recetas">Recetas</button>
+      <button data-tab="facturacion">Facturación</button>
+    </nav>
+  </div>
+
+  <main>
+    <section id="tab-inicio" class="tab-content active">
+      <div class="carrusel">
+        <img id="carrusel-img" src="promociones/promo1.jpg" alt="Promoción">
+      </div>
+    </section>
+
+    <section id="tab-nosotros" class="tab-content">
+      <h2>¿Quiénes somos?</h2>
+      <p>Somos una tienda de abarrotes local, ofreciendo productos frescos y atención personalizada.</p>
+    </section>
+
+    <section id="tab-promociones" class="tab-content">
+      <h2>Promociones</h2>
+      <div class="promo-imgs">
+        <img src="promociones/promo1.jpg" alt="Promoción 1">
+        <img src="promociones/promo2.jpg" alt="Promoción 2">
+        <img src="promociones/promo3.jpg" alt="Promoción 3">
+        <img src="promociones/promo4.jpg" alt="Promoción 4">
+        <img src="promociones/promo5.jpg" alt="Promoción 5">
+        <img src="promociones/promo6.jpg" alt="Promoción 6">
+      </div>
+    </section>
+
+    <section id="tab-contacto" class="tab-content">
+      <h2>Contacto y Ubicación</h2>
+      <p><strong>Teléfono:</strong> 555-123-4567</p>
+      <p><strong>Email:</strong> abarrotesketzal@email.com</p>
+      <p><strong>Dirección:</strong> Calle Principal #123, Tu Ciudad</p>
+      <iframe src="https://maps.google.com/maps?q=Calle%20Principal%20123&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+        width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </section>
+
+    <section id="tab-productos" class="tab-content">
+      <h2>Productos por Categoría</h2>
+      <div id="productos-categorias"></div>
+      <div class="formulario-producto">
+        <h3>Agregar / Editar Producto</h3>
+        <form id="form-producto">
+          <label>
+            Categoría:
+            <input type="text" id="categoria" required>
+          </label>
+          <label>
+            Nombre del producto:
+            <input type="text" id="nombre" required>
+          </label>
+          <label>
+            Precio:
+            <input type="number" id="precio" min="0" step="0.01" required>
+          </label>
+          <button type="submit">Guardar</button>
+          <input type="hidden" id="producto-id">
+        </form>
+      </div>
+    </section>
+
+    <section id="tab-recetas" class="tab-content">
+      <h2>Recetas</h2>
+      <div id="recetas-lista"></div>
+    </section>
+
+    <section id="tab-facturacion" class="tab-content">
+      <h2>Facturación</h2>
+      <p>Próximamente podrás solicitar tu factura desde la web.</p>
+    </section>
+  </main>
+
+  <!-- Redes sociales al final de la página -->
+  <div class="redes-final">
+    <a href="https://facebook.com/tu-negocio" target="_blank" class="red-social facebook" aria-label="Facebook">
+      <img src="icons/facebook.png" alt="Facebook" />
+    </a>
+    <a href="https://wa.me/5215551234567" target="_blank" class="red-social whatsapp" aria-label="WhatsApp">
+      <img src="icons/whatsapp.png" alt="WhatsApp" />
+    </a>
+    <a href="https://instagram.com/tu-negocio" target="_blank" class="red-social instagram" aria-label="Instagram">
+      <img src="icons/instagram.png" alt="Instagram" />
+    </a>
+  </div>
+
+  <!-- Modal carrito -->
+  <div id="modal-carrito" class="modal">
+    <div class="modal-content">
+      <span id="cerrar-carrito" class="close">&times;</span>
+      <h2>Carrito de Compras</h2>
+      <ul id="carrito-lista"></ul>
+      <p id="carrito-total"></p>
+      <button id="pagar-btn" style="background: #d50000; color: #fff; border: none; padding: 10px 30px; border-radius: 8px; font-size: 1.1em; margin-top: 15px; display:none;">Pagar</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Abarrotes Ketzal</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
